@@ -1,0 +1,41 @@
+<html>
+  <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <style>
+        html, body {
+            -ms-touch-action: none;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+    </style>
+  <head>
+    <title>新用户</title>
+  </head>
+  <body>
+    <form action="regist.php" method="post" enctype="multipart/form-data">
+      <table border="1" cellspacing="0" >
+        <tr>
+          <td>昵称</td>
+          <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+          <td>密码（不要使用微信密码或敏感密码）</td>
+          <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+          <td>头像（可以不传）</td>
+          <td><input type="file" name="avatar"/></td>
+        </tr>
+        
+      </table>
+      <input type="submit">
+    </form>
+  </body>
+</html>
