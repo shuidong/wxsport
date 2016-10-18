@@ -20,6 +20,7 @@ if (isset($_POST["login"])) {
     }
 
     $mysqli->select_db($dbNm);
+    $mysqli->set_charset('utf8');
 
     $userid = $mysqli->real_escape_string($_POST["userid"]);
 
@@ -31,6 +32,7 @@ if (isset($_POST["login"])) {
       exit();
     }
 
+    $db_hashed_pwd = "";
     while ($row = $result->fetch_assoc()) {
       $db_hashed_pwd = $row['password'];
       $uid = $row['id'];
@@ -75,6 +77,6 @@ if (isset($_POST["login"])) {
   <input type="submit" id="login" name="login" value="登录">
   </fieldset>
   </form>
-  <a href="regist.html">注册用户</a>
+  <!-- <a href="regist.html">注册用户</a> -->
   </body>
 </html>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2016 年 10 月 18 日 07:01
+-- 生成日期: 2016 年 10 月 18 日 11:33
 -- 服务器版本: 5.5.27
 -- PHP 版本: 5.4.7
 
@@ -41,13 +41,11 @@ CREATE TABLE IF NOT EXISTS `t_users` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) CHARACTER SET utf8 NOT NULL,
   `password` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `realName` varchar(50) CHARACTER SET utf8 NOT NULL,
   `avatar` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=27 ;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

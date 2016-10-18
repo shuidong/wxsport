@@ -17,14 +17,15 @@ if (!$db_selected){
     die('选择数据库失败。'.mysql_error());
 }
 
-mysql_set_charset('utf8');
-$mysqli->query("SET timezone = '+8:00'");
+mysql_set_charset('utf8', $link);
+//$mysqli->query("SET timezone = '+8:00'");
 $result = mysql_query("SELECT name,password FROM $dbUserTbl");
 if (!$result) {
     die('SELECT查询失败。'.mysql_error());
 }
 
 $name = $_POST['name'];
+$realName = $_POST['realName'];
 $password = $_POST['password'];
 $hashpass = $password;//password_hash($password, PASSWORD_DEFAULT);
 $avatar = "";
@@ -46,7 +47,7 @@ try{
 
 
 
-$sql = "INSERT INTO t_users (name, password, avatar) VALUES ('$name','$hashpass', '$avatar')";
+$sql = "INSERT INTO t_users (name, password, realName, avatar) VALUES ('$name','$hashpass', '$realName', '$avatar')";
 $result_flag = mysql_query($sql);
 
 if (!$result_flag) {

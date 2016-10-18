@@ -19,7 +19,7 @@ if (!$db_selected){
     die('选择数据库失败。'.mysql_error());
 }
 
-mysql_set_charset('utf8');
+mysql_set_charset('utf8', $link);
 
 $sql = "INSERT INTO t_checkin (userId) VALUES ('" . $_SESSION["uid"] ."')";
 $result_flag = mysql_query($sql);
